@@ -35,7 +35,7 @@ export class FormAdopterComponent {
 
   submitForm(formData: any) {
 
-    const url = `https://adocao-pet-backend-production.up.railway.app/${this.getLastNumberFromURL()}`;
+    const url = `https://adocao-pet-backend-production.up.railway.app/adotante/${this.getLastNumberFromURL()}`;
     const adopter = {
       name: this.name,
       email: this.email,
