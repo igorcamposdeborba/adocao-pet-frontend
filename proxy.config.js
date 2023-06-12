@@ -1,7 +1,7 @@
 const proxy = [
     {
       context: '/api',
-      target: 'adocao-pet-frontend-production.up.railway.app',
+      target: 'https://adocao-pet-backend-production.up.railway.app',
       secure: false,
       changeOrigin: true
     }
