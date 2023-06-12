@@ -1,0 +1,16 @@
+
+<nav mat-elevation-z4>
+    <a routerLink="" id="logo-position"> <div id="logo" alt="Logo"></div> </a>
+    <div class="menu-items"> 
+        <a routerLink="catalog" class="item1"> <button mat-stroked-button color="primary" class="gray"> <strong>Conheça os Pets</strong> </button> </a>
+        <a routerLink="doacao"> <button mat-stroked-button color="primary">Doar mantimentos</button> </a> 
+        <a routerLink="ong"> <button mat-stroked-button color="primary">Sou ONG</button> </a>
+    </div>
+</nav>
+
+<div id="cookies-notification">
+    Utilizamos tecnologias como cookies para melhorar a sua experiência no site. Leia a <button mat-button (click)="openDialog()">Política de privacidade</button>.
+    Ao continuar navegando, você concorda com as condições. 
+</div>
+
+<router-outlet></router-outlet> <!-- renderizar componentes do app-routing.module.ts -->

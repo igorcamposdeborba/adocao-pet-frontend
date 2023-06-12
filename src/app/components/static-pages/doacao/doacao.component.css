@@ -1,0 +1,34 @@
+main {
+    margin: 6vw 6vw 8vh 12vw;
+}
+h1 {
+    font-weight: 600;
+}
+#button-center {
+    text-align: center;
+    margin: 4vw auto;
+}
+
+#table-grid { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 3vw;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+}
+
+@media (max-width: 900px) {
+#table-grid { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+}
+@media (max-width: 510px) {
+    #table-grid { 
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+}
+}
