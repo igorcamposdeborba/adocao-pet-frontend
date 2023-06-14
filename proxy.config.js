@@ -1,9 +1,7 @@
-import { API_CONFIG } from './src/app/config/api.config';
-
 const proxy = [
     {
       context: '/api',
-      target: `${API_CONFIG}`,
+      target: 'https://adocao-pet-backend-production.up.railway.app',
       secure: false,
       changeOrigin: true,
       pathRewrite: {'^/api' : ''}
