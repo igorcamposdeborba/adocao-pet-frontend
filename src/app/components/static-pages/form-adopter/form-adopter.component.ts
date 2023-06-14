@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { API_CONFIG } from '../../../config/api.config';
+import { API_CONFIG } from 'src/app/config/api.config';
 
 
 @Component({
