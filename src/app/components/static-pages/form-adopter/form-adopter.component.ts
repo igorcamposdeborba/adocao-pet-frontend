@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { API_CONFIG } from '../../../config/api.config';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class FormAdopterComponent {
 
   submitForm(formData: any) {
 
-    const url = `https://adocao-pet-backend-production.up.railway.app/adotante/${this.getLastNumberFromURL()}`;
+    const url = `${API_CONFIG}/adotante/${this.getLastNumberFromURL()}`;
     const adopter = {
       name: this.name,
       email: this.email,
@@ -51,7 +52,7 @@ export class FormAdopterComponent {
         this.dialogbox.close(error);
 
         let errorMessage;
-        if (error?.error?.errors && error.error.errors[0]?.defaultMessage) {
+        if (error.error.errors[0]?.defaultMessage) {
           errorMessage = error.error.errors[0].defaultMessage;
         } else {
           errorMessage = error.error.message;
