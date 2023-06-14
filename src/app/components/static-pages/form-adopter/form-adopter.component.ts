@@ -35,7 +35,7 @@ export class FormAdopterComponent {
 
   submitForm(formData: any) {
 
-    const url = `https://adocao-pet-backend-production.up.railway.app/adotante/${this.getLastNumberFromURL()}`;
+    const url = `http://localhost:8080/adotante/${this.getLastNumberFromURL()}`;
     const adopter = {
       name: this.name,
       email: this.email,
@@ -49,7 +49,15 @@ export class FormAdopterComponent {
         // location.reload();
       }, error => {
         this.dialogbox.close(error);
-        this.notification.open(JSON.stringify(error.error.message), "", { duration: 8000 , panelClass: ['mat-toolbar', 'mat-warn'] });
+
+        let errorMessage;
+        if (error?.error?.errors && error.error.errors[0]?.defaultMessage) {
+          errorMessage = error.error.errors[0].defaultMessage;
+        } else {
+          errorMessage = error.error.message;
+        }
+        this.notification.open(errorMessage, "", { duration: 8000 , panelClass: ['mat-toolbar', 'mat-warn'] });
+    
       }
     );
   }

@@ -1,9 +1,10 @@
 const proxy = [
     {
       context: '/api',
-      target: 'https://adocao-pet-backend-production.up.railway.app',
+      target: 'http://localhost:8080',
       secure: false,
-      changeOrigin: true
+      changeOrigin: true,
+      pathRewrite: {'^/api' : ''}
     }
   ];
   module.exports = proxy;
