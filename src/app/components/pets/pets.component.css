@@ -9,6 +9,7 @@ h1 {
     font-weight: bold;
 }
 #container-list {
+    width: 95%;
     margin: 10vh 0 2vh 1vh;
     line-height: 2rem;
 }
