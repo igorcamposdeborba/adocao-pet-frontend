@@ -52,7 +52,7 @@ export class FormAdopterComponent {
         this.dialogbox.close(error);
 
         let errorMessage;
-        if (error.error.errors[0]?.defaultMessage) {
+        if (error?.error?.errors && error.error.errors[0]?.defaultMessage) {
           errorMessage = error.error.errors[0].defaultMessage;
         } else {
           errorMessage = error.error.message;
