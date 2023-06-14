@@ -47,7 +47,7 @@ export class FormAdopterComponent {
       response => {
         this.dialogbox.close(response);
         this.notification.open("Enviado", "", { duration: 1000 });
-        // location.reload();
+
       }, error => {
         this.dialogbox.close(error);
 
@@ -56,6 +56,7 @@ export class FormAdopterComponent {
           errorMessage = error.error.errors[0].defaultMessage;
         } else {
           errorMessage = error.error.message;
+          errorMessage = error.error.errors[0].defaultMessage;
         }
         this.notification.open(errorMessage, "", { duration: 8000 , panelClass: ['mat-toolbar', 'mat-warn'] });
     
