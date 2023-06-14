@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { API_CONFIG } from 'src/app/config/api.config';
 
 
 @Component({
@@ -47,17 +46,15 @@ export class FormAdopterComponent {
       response => {
         this.dialogbox.close(response);
         this.notification.open("Enviado", "", { duration: 1000 });
-
+        // location.reload();
       }, error => {
         this.dialogbox.close(error);
 
         let errorMessage;
         if (error?.error?.errors && error.error.errors[0]?.defaultMessage) {
           errorMessage = error.error.errors[0].defaultMessage;
-        } if (error?.error?.message) {
-          errorMessage = error.error.message;
         } else {
-          errorMessage = error.error;
+          errorMessage = error.error.message;
         }
         this.notification.open(errorMessage, "", { duration: 8000 , panelClass: ['mat-toolbar', 'mat-warn'] });
     
