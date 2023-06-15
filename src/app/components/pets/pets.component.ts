@@ -41,8 +41,10 @@ export class PetsComponent {
   ngOnInit(): void { // ciclo de vida: ao iniciar o componente
     this.id = this.route.snapshot.paramMap.get('id'); // insere na url o id para a requisição
     this.findById(this.id);
-    this.meta.updateTag({ name: 'description', content: 'Adote um pet e mude uma história de vida.'});
     this.scrollToTop();
+  }
+  ngDoCheck() {
+    this.meta.updateTag({ name: 'description', content: 'Adote o pet ' + this.ELEMENT_DATA_PET.name + ' e mude uma história de vida.'});
   }
   
   findById(id :number){ // View chama requisição do service.
