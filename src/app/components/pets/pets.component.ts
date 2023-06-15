@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MiniBannerComponent } from '../elements/mini-banner/mini-banner.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormAdopterComponent } from '../static-pages/form-adopter/form-adopter.component';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pets',
@@ -34,12 +35,13 @@ export class PetsComponent {
     nameOng: ''
   }
 
-  constructor(private service: PetService, private route: ActivatedRoute, private router: Router, private dialog: MatDialog){
+  constructor(private service: PetService, private route: ActivatedRoute, private router: Router, private dialog: MatDialog, private meta: Meta){
     MiniBannerComponent;
   }
   ngOnInit(): void { // ciclo de vida: ao iniciar o componente
     this.id = this.route.snapshot.paramMap.get('id'); // insere na url o id para a requisição
     this.findById(this.id);
+    this.meta.updateTag({ name: 'description', content: 'Adote o pet' + this.ELEMENT_DATA_PET.name + ' e mude uma história de vida.'});
     this.scrollToTop();
   }
   

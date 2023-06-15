@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./ong.component.css']
 })
 export class OngComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, private meta: Meta) {
+  }
+
+  ngOnInit(){
+    this.meta.updateTag({ name: 'description', content: 'Se você é uma ONG, é aqui onde você divulga seus pets e se cadastra para receber mantimentos'});
   }
 
   clearRouterLink() {

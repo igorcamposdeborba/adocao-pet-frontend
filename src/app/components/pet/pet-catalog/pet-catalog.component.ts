@@ -3,6 +3,7 @@ import { Ong, Pet } from 'src/app/models/pet';
 import { PetService } from 'src/app/services/pet.service';
 import { AdoptionProcessBannerComponent } from '../../elements/adoption-process-banner/adoption-process-banner.component';
 import { Router } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pet-catalog',
@@ -15,18 +16,19 @@ export class PetCatalogComponent implements OnInit {
   
   ELEMENT_DATA_PET: Pet[] = []
 
-  constructor(private service: PetService, private router: Router){
+  constructor(private service: PetService, private router: Router, private meta: Meta){
     this.findAll();
   }
   
+  ngOnInit(): void { // ciclo de vida: ao iniciar o componente
+    AdoptionProcessBannerComponent;
+    this.meta.updateTag({ name: 'description', content: 'Adote um pet e mude uma história'});
+  }
+
   findAll(){ // View chama requisição do service.
     this.service.findAll().subscribe(response => {
       this.ELEMENT_DATA_PET = response;
     }); 
-  }
-
-  ngOnInit(): void { // ciclo de vida: ao iniciar o componente
-    AdoptionProcessBannerComponent;
   }
 
   scrollToTop() {
