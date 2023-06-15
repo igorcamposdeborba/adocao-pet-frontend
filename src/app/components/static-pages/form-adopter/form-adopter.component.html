@@ -1,5 +1,6 @@
 <div id="container">
     <h2>Me adota</h2>
+    <form id="adopter">
     <mat-form-field>
         <mat-label class="center">Nome completo do adotante</mat-label>
         <input type="text" matInput [(ngModel)]="name" required>
@@ -12,7 +13,9 @@
         <mat-label class="center">Telefone</mat-label>
         <input type="text" matInput [(ngModel)]="telephone" required>
     </mat-form-field>
+    </form>
 
-    <button class="sendFormAdopt" mat-raised-button color="primary" class="center" (click)="submitForm([lastNumber])" [disabled]="!verifyRequiredFields()">Enviar</button>
+    <button type="submit" form="adopter" value="Submit" form mat-raised-button color="primary" class="center" (click)="submitForm([lastNumber])" [disabled]="!verifyRequiredFields()">
+        Enviar</button>
     <small class="center"><br/>Após o envio, aguarde a ONG entrar em contato</small>
 </div>
