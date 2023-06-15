@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class DoacaoComponent {
 
-  constructor(private router: Router, private meta: Meta) {
+  constructor(private router: Router, private meta: Meta, private titleService: Title) {
   }
 
   ngOnInit(){
     this.meta.updateTag({ name: 'description', content: 'Se você é um adotante, é aqui onde você doa mantimentos, como alimentos, materiais de limpeza etc'});
+    this.titleService.setTitle('Adoção pet');
   }
 
   clearRouterLink() {
