@@ -54,7 +54,6 @@ export class FormAdopterComponent {
         if (error?.error?.errors && error.error.errors[0]?.defaultMessage) {
           errorMessage = error.error.errors[0].defaultMessage;
         } else {
-          console.log(error);
           errorMessage = error.error.message;
         }
         this.notification.open(errorMessage, "", { duration: 8000 , panelClass: ['mat-toolbar', 'mat-warn'] });
