@@ -57,7 +57,7 @@ export class PetService {
       new PetClass(5, "Max", "https://i.pinimg.com/originals/15/87/30/158730c6d18724fd8ed04484912f48af.jpg", 'M', "MACHO", ["VACINADO"], 12, null, "Garra"),
       new PetClass(6, "Mike", "https://www.rover.com/blog/wp-content/uploads/2021/03/older-dog-960x540.jpg", 'P', "MACHO", ["CASTRADO", "VERMIFUGADO"], 5, "Ativo, dócil, não é acostumado a outros animais", "Adote POA"),
       new PetClass(7, "Simba", "https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2019/04/cachorro-gettyimages.jpg", 'G', "MACHO", ["CASTRADO"], 7, null, "Porto Filhote"),
-      new PetClass(8, "Lili", "https://image.cachorrogato.com.br/thumb/800/600/1/imagens/original/imagem115.jpg", 'G', "FEMEA", ["VERMIFUGADO"], 2, "Dócil e carinhosa", "Adote POA"),
+      new PetClass(8, "Lili", "https://ufape.com.br/wp-content/uploads/2024/03/Ufape-Hospital-Veterinario-cachorro-braquicefalico-GS2-MKT-Freepik.jpg", 'G', "FEMEA", ["VERMIFUGADO"], 2, "Dócil e carinhosa", "Adote POA"),
       new PetClass(9, "Fred", "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2022-01/210602-doge-meme-nft-mb-1715-8afb7e.jpg", 'M', "MACHO", ["CASTRADO", "VERMIFUGADO"], 5, "Dócil, tranquilo e carinhoso", "Porto Filhote")
     ];
   }
